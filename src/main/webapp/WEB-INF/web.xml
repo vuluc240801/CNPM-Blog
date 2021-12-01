@@ -53,6 +53,18 @@
 		<servlet-name>UserProfileServlet</servlet-name>
 		<servlet-class>controller.UserProfileServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<display-name>ViewContentServlet</display-name>
+		<servlet-name>ViewContentServlet</servlet-name>
+		<servlet-class>controller.ViewContentServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>CreateAndEditContentServlet</display-name>
+		<servlet-name>CreateAndEditContentServlet</servlet-name>
+		<servlet-class>controller.CreateAndEditContentServlet</servlet-class>
+	</servlet>
 
 	<servlet-mapping>
 		<servlet-name>Tiles Dispatch</servlet-name>
@@ -73,5 +85,13 @@
 	<servlet-mapping>
 		<servlet-name>UserProfileServlet</servlet-name>
 		<url-pattern>/Profile</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ViewContentServlet</servlet-name>
+		<url-pattern>/ViewContentServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CreateAndEditContentServlet</servlet-name>
+		<url-pattern>/CreateAndEditContentServlet</url-pattern>
 	</servlet-mapping>
 </web-app>

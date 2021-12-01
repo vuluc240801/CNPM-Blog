@@ -49,7 +49,7 @@ public class UserLoginServlet extends HttpServlet {
 
 		RequestDispatcher re = null;
 		if (root) {
-			dest = "home-page.jsp";
+			dest = "view-content.tiles";
 
 			// Create session for first access
 			HttpSession session = request.getSession();

@@ -68,9 +68,13 @@
     </form>
   </div>
 </div>
+
+
+
 <%@ page import="model.User" %>
 
-<%User user =(User)session.getAttribute("user"); %>>
+<%User user =(User)session.getAttribute("user"); %>
+
 <script type="text/javascript">
 	var rawData = {
 			"firstname" : "<%= user.getFirstname()%>",
@@ -80,7 +84,6 @@
 			"description" : "<%= user.getDescription()%>",
 	};
 	
-	var editData = rawData;
 	
 	const fillData = (data) => {
 		for (const [key, value] of Object.entries(data)) {

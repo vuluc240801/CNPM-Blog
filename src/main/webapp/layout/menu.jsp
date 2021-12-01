@@ -16,12 +16,14 @@
 				</div>
 			</form>
 		</li>
-		<li><a href="view_content.tiles" id="need"><i class="fa fa-table""></i> View
+		<li><a href="ViewContentServlet" id="need"><i class="fa fa-table""></i> View
 				Contents</a></li>
-		<li><a href="form_content.tiles"><i class="fa fa-pencil-square-o"></i> Form
+		<li><a href="CreateAndEditContentServlet?mode=0"><i class="fa fa-pencil-square-o"></i> Form
 				Content</a></li>
 	</ul>
 </div>
 <script src="resources/js/search.js" type="text/javascript"></script>
+
+<script src="resources/js/datatable.js" type="text/javascript"></script>
 <!-- /.navbar-collapse -->
 

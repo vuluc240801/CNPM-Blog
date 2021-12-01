@@ -55,8 +55,8 @@ $().ready(function() {
 		rules: {
 			"title": {
 				required: true,
-				maxlength:50,
-				minlength:200
+				maxlength:200,
+				minlength:50
 			},
 			"brief": {
 				minlength:30,

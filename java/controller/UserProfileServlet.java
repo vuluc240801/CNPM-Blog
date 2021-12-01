@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.Enumeration;
 
@@ -68,7 +69,13 @@ public class UserProfileServlet extends HttpServlet {
 				);
 		try {
 			Boolean flag  = userDAO.updateUser(updateUser);
-			System.out.println("RESULT" + flag);
+			if (flag == true) {
+				PrintWriter out = response.getWriter();  
+				response.setContentType("text/html");  
+				out.println("<script type=\"text/javascript\">");  
+				out.println("alert('Success');");  
+				out.println("</script>");
+			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

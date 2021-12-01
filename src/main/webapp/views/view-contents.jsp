@@ -6,7 +6,7 @@
 <div class="panel panel-default">
   <div class="panel-heading">View Content List</div>
   <div class="panel-body">
-    <table class="table table-bordered table-striped table-responsive">
+    <table id="dataTable" class="table table-bordered table-striped table-responsive">
       <thead>
         <tr>
           <th>#</th>
@@ -17,16 +17,24 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>They want a salmon for lunch.</td>
+      
+        <%@ page import="model.Content" %>  
+        <%@ page import="java.util.ArrayList" %>
+       <%
+       ArrayList<Content> contents= (ArrayList<Content>)session.getAttribute("contents"); 
+       System.out.println(contents.size());
+       
+		  for (Content content: contents) {   
+		%>
+		  <tr>
+          <td><%= content.getId()%> </td>
+          <td><%= content.getTitle()%></td>
           <td>
-            Feel free to use any of the random sentences for any project that
-            you may be doing.
+            <%= content.getContent()%>
           </td>
-          <td>2006-11-10</td>
+          <td><%= content.getCreateDate() %></td>
           <td class="text-center">
-            <a class="btn btn-info btn-xs" href="#"
+            <a class="btn btn-info btn-xs" href="CreateAndEditContentServlet?content_id=<%=content.getId()%>&mode=1"
               ><span class="glyphicon glyphicon-edit"></span> Edit</a
             >
             <a href="#" class="btn btn-danger btn-xs"
@@ -34,23 +42,10 @@
             >
           </td>
         </tr>
-        <tr>
-          <td>2</td>
-          <td>Let's hang out soon.</td>
-          <td>
-            There're been some big changes made around here. My dog, Jake,
-            barked at the mail carrier.
-          </td>
-          <td>2020-06-22</td>
-          <td class="text-center">
-            <a class="btn btn-info btn-xs" href="#"
-              ><span class="glyphicon glyphicon-edit"></span> Edit</a
-            >
-            <a href="#" class="btn btn-danger btn-xs"
-              ><span class="glyphicon glyphicon-remove"></span> Del</a
-            >
-          </td>
-        </tr>
+		<%}
+		%>
+
+        
       </tbody>
     </table>
   </div>

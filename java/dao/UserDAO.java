@@ -1,6 +1,7 @@
 package dao;
 
 import java.sql.Connection;
+import utilities.ErrorHandler;
 
 import java.sql.Date;
 import java.sql.DriverManager;
@@ -11,8 +12,6 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import model.User;
 
 public class UserDAO {
@@ -28,8 +27,11 @@ public class UserDAO {
     private static final String UPDATE_USERS_SQL = "update member set firstname=?, lastname=?,  phone=?, description=?, UpdatedDate=? where email=?;";
     
     private static final String GET_MEMBER_BY_USERNAME = "select * from member "
-    		+ "where email=?";
+    		+ "where email=?;";
     
+    private static final String GET_ID_BY_USERNAME = "select id from member where email=? ;";
+    
+    private ErrorHandler er = new  ErrorHandler();
     
     public UserDAO() {}
     
@@ -79,10 +81,36 @@ public class UserDAO {
 		  
         }
         catch (SQLException e) {
-			printSQLException(e);
+			er.printSQLException(e);
 		}
         
         return userInfo;
+        
+    }
+    
+    
+    public String getID(String email) throws SQLException {
+
+    	String id = "";
+        // try-with-resource statement will auto close the connection.
+        try (Connection connection = conn.getConnection(); 
+        		PreparedStatement preparedStatement = connection.prepareStatement(GET_ID_BY_USERNAME)) {
+            preparedStatement.setString(1, email);
+         // Step 3: Execute the query or update query
+		ResultSet rs = preparedStatement.executeQuery();
+		// Step 4: Process the ResultSet object.
+		
+		  while (rs.next()) { 
+			  id = rs.getString("id");
+		
+		  }
+		  
+        }
+        catch (SQLException e) {
+			er.printSQLException(e);
+		}
+        
+        return id;
         
     }
     
@@ -106,7 +134,7 @@ public class UserDAO {
 			 * User(name, email, password); }
 			 */
 		} catch (SQLException e) {
-			printSQLException(e);
+			er.printSQLException(e);
 		}
 		return flag;
     }
@@ -128,19 +156,7 @@ public class UserDAO {
         }
         return rowUpdated;
     }
-    private void printSQLException(SQLException ex) {
-        for (Throwable e: ex) {
-            if (e instanceof SQLException) {
-                e.printStackTrace(System.err);
-                System.err.println("SQLState: " + ((SQLException) e).getSQLState());
-                System.err.println("Error Code: " + ((SQLException) e).getErrorCode());
-                System.err.println("Message: " + e.getMessage());
-                Throwable t = ex.getCause();
-                while (t != null) {
-                    System.out.println("Cause: " + t);
-                    t = t.getCause();
-                }
-            }
-        }
-    }
+    
+    
+    
 }
