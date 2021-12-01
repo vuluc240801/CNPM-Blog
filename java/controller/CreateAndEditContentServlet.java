@@ -67,7 +67,7 @@ public class CreateAndEditContentServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String mode = request.getParameter("mode");
+		int mode =Integer.parseInt(request.getParameter("mode"));
 		
 		String title = request.getParameter("title");
 		String brief = request.getParameter("brief");
@@ -81,7 +81,7 @@ public class CreateAndEditContentServlet extends HttpServlet {
 		UserDAO userDAO = new UserDAO();
 		String user_id = "";
 		
-		System.out.println("POST CALL");
+		System.out.println("MODE " + mode );
 		
 		
 		
@@ -96,7 +96,7 @@ public class CreateAndEditContentServlet extends HttpServlet {
         
         Content ct = new Content();
         
-        if (mode=="Create") {
+        if (mode==0) {
         	System.out.println("CREATE");
         	ct = new Content(title, brief, content , user_id);
         	try {

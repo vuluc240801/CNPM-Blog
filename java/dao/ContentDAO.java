@@ -32,6 +32,7 @@ public class ContentDAO {
 	private static final String SELECT_CONTENT_SQL = "select * from content;";
 	
 	
+	
 	private static final String SELECT_CONTENT_SQL_BY_ID = "select * from content where id=?;";
 	
 	private static final String DELETE_CONTENT_SQL = "delete from content where id=?;";
@@ -45,7 +46,7 @@ public class ContentDAO {
             preparedStatement.setString(1, insertContent.getTitle());
             preparedStatement.setString(2, insertContent.getBrief());
             preparedStatement.setString(3, insertContent.getContent());
-            preparedStatement.setString(3, insertContent.getAuthorID());
+            preparedStatement.setString(4, insertContent.getAuthorID());
             
             rowInserted = (preparedStatement.executeUpdate() > 0);
         }
@@ -76,13 +77,13 @@ public class ContentDAO {
     }
 	
 	
-	public boolean deleteContent(Content content) throws SQLException {
+	public boolean deleteContent(int id) throws SQLException {
         boolean rowUpdated;
         Date CreatedDate= new Date(System.currentTimeMillis());
         
         try (Connection connection = conn.getConnection(); 
         		PreparedStatement statement = connection.prepareStatement(DELETE_CONTENT_SQL);) {
-            statement.setInt(1, content.getId());
+            statement.setInt(1, id );
   
             rowUpdated = statement.executeUpdate() > 0;
         }

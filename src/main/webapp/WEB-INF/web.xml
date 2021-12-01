@@ -65,6 +65,13 @@
 		<servlet-name>CreateAndEditContentServlet</servlet-name>
 		<servlet-class>controller.CreateAndEditContentServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>DeleteContent</display-name>
+		<servlet-name>DeleteContent</servlet-name>
+		<servlet-class>controller.DeleteContent</servlet-class>
+	</servlet>
 
 	<servlet-mapping>
 		<servlet-name>Tiles Dispatch</servlet-name>
@@ -93,5 +100,9 @@
 	<servlet-mapping>
 		<servlet-name>CreateAndEditContentServlet</servlet-name>
 		<url-pattern>/CreateAndEditContentServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DeleteContent</servlet-name>
+		<url-pattern>/DeleteContent</url-pattern>
 	</servlet-mapping>
 </web-app>

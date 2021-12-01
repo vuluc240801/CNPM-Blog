@@ -37,7 +37,7 @@
             <a class="btn btn-info btn-xs" href="CreateAndEditContentServlet?content_id=<%=content.getId()%>&mode=1"
               ><span class="glyphicon glyphicon-edit"></span> Edit</a
             >
-            <a href="#" class="btn btn-danger btn-xs"
+            <a href="DeleteContent?id=<%=content.getId()%>" class="btn btn-danger btn-xs"
               ><span class="glyphicon glyphicon-remove"></span> Del</a
             >
           </td>
