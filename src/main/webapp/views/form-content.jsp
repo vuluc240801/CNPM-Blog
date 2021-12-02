@@ -8,8 +8,9 @@
 
 
 
-
 <div id="page-wrapper">
+<h2 id="loading"></h2>
+
 <h2><%=mode%> Content</h2>
 <hr />
 <div class="panel panel-default">

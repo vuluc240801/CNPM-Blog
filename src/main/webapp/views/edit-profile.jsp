@@ -1,6 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+
+
+	
+            
+
 <div id="page-wrapper">
+<h2 id="loading"></h2>
 <h2>Edit Profile</h2>
 <hr />
 <div class="panel panel-default">

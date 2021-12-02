@@ -14,7 +14,7 @@
 				aria-expanded="true"><i class="fa fa-user" aria-hidden="true"></i><span
 					class="caret"></span></a>
 				<ul class="dropdown-menu">
-					<li><a href="Profile"><i id="icon_s"
+					<li id="edit_profile"><a href="Profile"><i id="icon_s"
 							class="fa fa-user" aria-hidden="true"></i> User Profile</a></li>
 					<li role="separator" class="divider"></li>
 					<li><a href="login.jsp"><i id="icon_s"

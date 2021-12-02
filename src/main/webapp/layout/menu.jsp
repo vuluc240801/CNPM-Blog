@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	
+
+
 <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
 <div class="collapse navbar-collapse navbar-ex1-collapse">
 	<ul class="nav navbar-nav side-nav">
@@ -16,9 +19,9 @@
 				</div>
 			</form>
 		</li>
-		<li><a href="ViewContentServlet" id="need"><i class="fa fa-table""></i> View
+		<li id="view_content"><a id="need"><i class="fa fa-table"></i> View
 				Contents</a></li>
-		<li><a href="CreateAndEditContentServlet?mode=0"><i class="fa fa-pencil-square-o"></i> Form
+		<li id="form_content"><a href="CreateAndEditContentServlet?mode=0" id="form_need"><i class="fa fa-pencil-square-o"></i> Form
 				Content</a></li>
 	</ul>
 </div>
