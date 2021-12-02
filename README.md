@@ -1,4 +1,4 @@
-# Đồ án DBMS
+# Đồ án DBMS - Nhóm 3
 # Quản Lý Blog
 
 ## Chức năng:
