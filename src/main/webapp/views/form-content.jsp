@@ -54,7 +54,7 @@
         <button class="btn btn-default" type="submit" value="Add">
           Submit Button
         </button>
-        <button class="btn btn-default" type="reset">Reset Button</button>
+        <button class="btn btn-default"  onclick="fillData(rawData)">Reset Button</button>
       </fieldset>
     </form>
   </div>
