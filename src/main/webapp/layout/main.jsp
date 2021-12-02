@@ -31,9 +31,7 @@
     <!-- end stylesheets -->
     
     <!-- javascripts -->
-    <c:forEach var="js" items="${javascripts}">
-    	<script type="text/javascript" src="<c:url value="${js}"/>"></script>
-    </c:forEach>
+ 
     
     <!-- end js -->
 </head>
@@ -53,4 +51,9 @@
 	</div>
 </div>
 </body>
+
+
+   <c:forEach var="js" items="${javascripts}">
+    	<script type="text/javascript" src="<c:url value="${js}"/>"></script>
+    </c:forEach>
 </html>

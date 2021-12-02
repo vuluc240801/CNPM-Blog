@@ -16,9 +16,9 @@
 				</div>
 			</form>
 		</li>
-		<li><a href="ViewContentServlet" id="need"><i class="fa fa-table""></i> View
+		<li id="view_content"><a href="ViewContentServlet" id="need"><i class="fa fa-table""></i> View
 				Contents</a></li>
-		<li><a href="CreateAndEditContentServlet?mode=0"><i class="fa fa-pencil-square-o"></i> Form
+		<li id="form_content"><a href="CreateAndEditContentServlet?mode=0"><i class="fa fa-pencil-square-o"></i> Form
 				Content</a></li>
 	</ul>
 </div>

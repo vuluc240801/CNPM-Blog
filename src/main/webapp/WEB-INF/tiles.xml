@@ -14,6 +14,7 @@
     	<put-list-attribute name="javascripts">
     		<add-attribute value="/resources/js/index.js" />
     		<add-attribute value="/resources/js/validation.js" />
+    		<add-attribute value="/resources/js/ajax.js" />
     	</put-list-attribute>
 	</definition>
 	<!-- add employee page -->
