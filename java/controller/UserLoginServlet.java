@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -50,6 +51,21 @@ public class UserLoginServlet extends HttpServlet {
 		RequestDispatcher re = null;
 		if (root) {
 			dest = "home-page.jsp";
+			
+			User info = new User();
+			
+			try {
+				info = userDAO.getUserInfo(email);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			if (info.getFirstname() == null || info.getLastname() == null) {
+				dest = "Profile";
+			} else {
+				dest = "ViewContentServlet";
+			}
 
 			// Create session for first access
 			HttpSession session = request.getSession();
