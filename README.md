@@ -1,5 +1,5 @@
-# Đồ án DBMS - Nhóm 3
-# Quản Lý Blog
+# Đồ án  CNPM 
+# Forum
 
 ## Chức năng:
 - Đăng nhập
