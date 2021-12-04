@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<definition name="main" template="/layout/main.jsp">
+		<put-attribute name="title" value="Welcome" type="string"/>
+		<put-attribute name="header" value="/layout/header.jsp" />
+		<put-attribute name="menu" value="/layout/menu.jsp" />
+		<put-attribute name="body" value="/layout/body.jsp" />
+		<put-list-attribute name="stylesheets">
+        	<add-attribute value="/resources/css/main.css" />
+    	</put-list-attribute>
+    	<put-list-attribute name="javascripts">
+    		<add-attribute value="/resources/js/index.js" />
+    		<add-attribute value="/resources/js/validation.js" />
+    		<add-attribute value="/resources/js/ajax.js" />
+    	</put-list-attribute>
+	</definition>
+	<!-- add employee page -->
+	<definition name="form_content" extends="main" >
+		<put-attribute name="title" value="Add Content" type="string"/>
+    	<put-attribute name="body" value="/views/form-content.jsp" />
+	</definition>
+	<definition name="view_content" extends="main" >
+		<put-attribute name="title" value="View Content" type="string"/>
+    	<put-attribute name="body" value="/views/view-contents.jsp" />
+	</definition>
+	
+	<definition name="edit-profile" extends="main" >
+		<put-attribute name="title" value="Add Content" type="string"/>
+    	<put-attribute name="body" value="/views/edit-profile.jsp" />
+	</definition>
+	<definition name="view_content_all" extends="main" >
+		<put-attribute name="title" value="Add Content" type="string"/>
+    	<put-attribute name="body" value="/views/view-contentAll.jsp" />
+	</definition>
+</tiles-definitions>
